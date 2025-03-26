@@ -39,7 +39,7 @@
     display: flex;
     gap: 8px;
     align-items: center;
-    background-color: #F2594B;
+    background-color: #F2DCC2;
     padding: 8px;
     font-weight: 500;
     box-shadow: 0px 0px 0px 12px 4px rgba(0, 0, 0, 0.1);
@@ -64,7 +64,7 @@
 }
 
 .shape {
-    background-color: #A63C3C;
+    background-color: #730202;
     width: 50%;
     height: 100%;
     position: absolute;

@@ -30,7 +30,7 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #91D7F2;
+    background-color: #F2A950;
     border-radius: 12px;
     padding: 10px 14px;
     font-weight: 600;
@@ -41,7 +41,7 @@ section {
 }
 
 .btn_default:hover {
-    background-color: #66c1e6;
+    background-color: #f79013;
     
 }
 
@@ -78,7 +78,7 @@ section {
     justify-content: center;
     width: 45px;
     height: 40px;
-    background-color: #5196A6;
+    background-color: #D92B04;
     font-size: 1.25rem;
     border-radius: 10px;
     text-decoration: none;
