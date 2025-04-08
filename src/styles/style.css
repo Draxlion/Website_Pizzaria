@@ -17,7 +17,7 @@ html {
     scroll-behavior: smooth;
 }
 
-body{
+body {
     background-color: #fff;
 }
 
@@ -42,7 +42,7 @@ section {
 
 .btn_default:hover {
     background-color: #f79013;
-    
+
 }
 
 #mobile_btn {
@@ -54,16 +54,18 @@ section {
 }
 
 @media screen and (max-width: 1170px) {
+
     #nav_list,
     #navbar .btn_default {
         display: none;
     }
+
     #mobile_btn {
         display: block;
         border: none;
         background-color: transparent;
         font-size: 1.5rem;
-        cursor: pointer;        
+        cursor: pointer;
     }
 }
 
@@ -98,4 +100,299 @@ section {
 
 .section_subtitle {
     font-size: 2.1875rem;
+}
+
+/* sidebar */
+
+.cart-sidebar {
+    position: fixed;
+    top: 0;
+    right: -350px;
+    /* Esconde o sidebar inicialmente */
+    width: 350px;
+    height: 100%;
+    background-color: #f8f9fa;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    transition: right 0.3s ease-in-out;
+    z-index: 1000;
+    /* Garante que o sidebar fique acima de outros elementos */
+    overflow-y: auto;
+    /* Permite rolagem se muitos itens forem adicionados */
+}
+
+.cart-sidebar.open {
+    right: 0;
+    /* Mostra o sidebar quando a classe 'open' é adicionada */
+}
+
+.cart-items {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 15px;
+}
+
+.cart-items li {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+    padding: 10px 0;
+}
+
+.cart-items li img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+    object-fit: cover;
+}
+
+.cart-items li .item-details {
+    flex-grow: 1;
+}
+
+.cart-items li .item-details h4 {
+    margin: 0 0 5px 0;
+    font-size: 16px;
+}
+
+.cart-items li .item-details span {
+    font-size: 14px;
+    color: #6c757d;
+}
+
+.cart-items li .remove-item {
+    background: none;
+    border: none;
+    color: #dc3545;
+    cursor: pointer;
+    font-size: 16px;
+    margin-left: 10px;
+}
+
+.cart-total {
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+#close-cart-sidebar,
+#checkout-button,
+#open-cart-sidebar {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    background-color: #f79013;
+    color: rgb(2, 0, 0);
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+#close-cart-sidebar:hover,
+#checkout-button:hover,
+#open-cart-sidebar:hover {
+    background-color: #f2594bc7;
+}
+
+/* modal */
+
+/* Estilos para o Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1001;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 25%;
+    border-radius: 20px;
+    position: relative;
+}
+
+.close-button {
+    color: #ff0000;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-body {
+    padding: 15px 0;
+}
+
+.modal-body .form-group {
+    margin-bottom: 15px;
+}
+
+.modal-body label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.modal-body select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.modal-body input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+.modal-footer {
+    padding: 15px 0;
+    text-align: right;
+}
+
+.modal-footer button {
+    margin-left: 10px;
+}
+
+/* Estilos para os botões de tamanho no modal */
+#pizza-sizes {
+    display: flex;
+    gap: 10px;
+    margin-top: 5px;
+}
+
+.size-button {
+    padding: 8px 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f8f9fa;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.size-button.active {
+    background-color: #F2594B;
+    color: black;
+    border-color: #F2594B;
+}
+
+.size-button:hover {
+    background-color: #e0e0e0;
+}
+
+/* Alinhamento dos botões no footer do modal */
+.modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    /* Alinha os botões à direita */
+    gap: 10px;
+    padding: 15px 0;
+}
+
+/* sistema de pagamento */
+
+/* Estilos para o modal de pagamento */
+.payment-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.payment-modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: none;
+    width: 600px;
+    border-radius: 15px;
+    position: relative;
+}
+
+.payment-close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.payment-close-button:hover,
+.payment-close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.payment-options {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.payment-options label {
+    display: block;
+}
+
+.payment-options button {
+    padding: 15px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 20px;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.payment-options button i {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.payment-options button.pix {
+    background-color: #FFDFA6;
+    color: rgb(0, 0, 0);
+}
+
+.payment-options button.vr {
+    background-color: #008C45;
+    color: #000000;
+}
+
+.payment-options button.debito {
+    background-color: #dbdbda;
+    color: rgb(0, 0, 0);
+}
+
+.payment-options button.credito {
+    background-color: #CD212A;
+    color: rgb(0, 0, 0);
 }
