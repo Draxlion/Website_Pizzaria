@@ -1,39 +1,6 @@
-$(document).ready(function () {
-    $('#mobile_btn').on('click', function () {
-        $('#mobile_menu').toggleClass('active');
-        $('#mobile_btn').find('i').toggleClass('fa-x');
-    });
+// Meninos, vou adicionar comentários pra nos ajudar a entender o que to fazendo kkkk
 
-    const sections = $('section');
-    const navItems = $('.nav_item');
-
-    $(window).on('scroll', function () {
-        const header = $('header');
-        const scrollPosition = $(window).scrollTop() - header.outerHeight(); // Correção aqui
-
-        let activeSectionIndex = 0;
-
-        if (scrollPosition <= 0) {
-            header.css('box-shadow', 'none');
-        } else {
-            header.css('box-shadow', '5px 1px 5px rgba(0, 0, 0, 0.1)');
-        }
-
-        sections.each(function (i) {
-            const section = $(this);
-            const sectionTop = section.offset().top - 96;
-            const sectionBottom = sectionTop + section.outerHeight();
-
-            if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
-                activeSectionIndex = i;
-                return false;
-            }
-        })
-        navItems.removeClass('active');
-        $(navItems[activeSectionIndex]).addClass('active');
-    });
-});
-
+// Animações globais
 
 ScrollReveal().reveal('#cta', {
     origin: 'left',
@@ -67,8 +34,7 @@ ScrollReveal().reveal('#primary', {
 
 // ------------------------------------------------------------------------------------
 
-// aula 05
-// criar a variável modalKey sera global
+//Funcionalidades do carrinho (Botões e tals)
 
 $(document).ready(function () {
     const cartSidebar = $('.cart-sidebar');
@@ -80,17 +46,17 @@ $(document).ready(function () {
 
     let cart = []; // Array para armazenar os itens do carrinho
 
-    // Função para abrir o sidebar do carrinho
+    // abrir o sidebar do carrinho
     openCartButton.on('click', function () {
         cartSidebar.addClass('open');
     });
 
-    // Função para fechar o sidebar do carrinho
+    // fechar o sidebar do carrinho
     closeCartButton.on('click', function () {
         cartSidebar.removeClass('open');
     });
 
-    // Função para adicionar um item ao carrinho
+    // adicionar um item ao carrinho
     function addItemToCart(name, price, imageSrc) {
         const existingItem = cart.find(item => item.name === name);
 
@@ -117,13 +83,13 @@ $(document).ready(function () {
         addItemToCart(itemName, itemPrice, itemImageSrc);
     });
 
-    // Função para remover um item do carrinho
+    //remover um item do carrinho
     function removeItemFromCart(itemName) {
         cart = cart.filter(item => item.name !== itemName);
         updateCartDisplay();
     }
 
-    // Função para atualizar a exibição do carrinho
+    // atualizar a exibição do carrinho
     function updateCartDisplay() {
         cartItemsList.empty();
         let total = 0;
@@ -151,7 +117,7 @@ $(document).ready(function () {
         });
     }
 
-    // Inicializa a exibição do carrinho (se houver itens no carregamento da página - opcional)
+    
     updateCartDisplay();
 });
 
@@ -183,17 +149,17 @@ $(document).ready(function () {
     let cart = [];
     let currentItem = null;
 
-    // Função para abrir o sidebar do carrinho
+    // abrir o sidebar do carrinho
     openCartButton.on('click', function () {
         cartSidebar.addClass('open');
     });
 
-    // Função para fechar o sidebar do carrinho
+    // fechar o sidebar do carrinho
     closeCartButton.on('click', function () {
         cartSidebar.removeClass('open');
     });
 
-    // abrir o modal de detalhes do item
+    // detalhes do item
     pizzaItemAddButtons.on('click', function () {
         const box = $(this).closest('.boxs');
         const itemName = box.find('.boxs_title').text();
@@ -299,7 +265,7 @@ $(document).ready(function () {
         updateCartDisplay();
     }
 
-    // Função para atualizar a exibição do carrinho
+    // atualizar a exibição do carrinho
     function updateCartDisplay() {
         cartItemsList.empty();
         let total = 0;
