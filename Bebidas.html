@@ -67,23 +67,59 @@
 
 <body>
 
-        <!-- sidebar -->
-        <div class="cart-sidebar">
-            <h2>Meu Carrinho</h2>
-            <ul class="cart-items">
-                </ul>
-            <div class="cart-total">
-                <strong>Total: R$ <span id="cart-total-value">0.00</span></strong>
-            </div>
-            <button class="btn_default" id="close-cart-sidebar">Fechar Carrinho</button>
-            <button class="btn_default" id="checkout-button">Finalizar Compra</button>
+    <!-- sidebar -->
+    <div class="cart-sidebar">
+        <h2>Meu Carrinho</h2>
+        <ul class="cart-items">
+        </ul>
+        <div class="cart-total">
+            <strong>Total: R$ <span id="cart-total-value">0.00</span></strong>
         </div>
-        
-        <button class="btn_default" id="open-cart-sidebar">
-            <i class="bi bi-cart-fill"></i> Ver Carrinho
-        </button>
-    
-        
+        <button class="btn_default" id="close-cart-sidebar">Fechar Carrinho</button>
+        <button class="btn_default" id="checkout-button">Finalizar Compra</button>
+    </div>
+
+    <button class="btn_default" id="open-cart-sidebar">
+        <i class="bi bi-cart-fill"></i> Ver Carrinho
+    </button>
+
+    <!-- Modal 1: Escolha de pagamento -->
+    <div id="paymentModal" class="payment-modal">
+        <div class="payment-modal-content">
+            <span class="payment-close-button">&times;</span>
+            <h2>Escolha a forma de pagamento:</h2>
+            <div class="payment-options">
+                <button type="button" class="pix">
+                    <i class="bi bi-qr-code"></i> Pix
+                </button>
+                <button type="button" class="vr">
+                    <i class="bi bi-badge-vr"></i> VR
+                </button>
+                <button type="button" class="debito">
+                    <i class="bi bi-credit-card-2-front-fill"></i> Débito
+                </button>
+                <button type="button" class="credito">
+                    <i class="bi bi-credit-card-fill"></i> Crédito
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Novo Modal para PIX -->
+    <div id="pixModal" class="payment-modal">
+        <div class="payment-modal-content">
+            <span class="pix-close-button">&times;</span>
+            <h2>Pagamento via Pix</h2><br><br>
+            <p>Escaneie o código abaixo e realize o pagamento</p>
+            <img src="/src/images/qr-code.png" class="qr_code" />
+            <p>Tempo restante: </p>
+            <img src="/src/images/loading.gif" class="timer" alt="Aguardando pagamento" />
+        </div>
+    </div>
+
+
+
+
 
     <!-- // bebidas // -->
 

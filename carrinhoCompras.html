@@ -32,7 +32,7 @@
         </ul>
 
         <a href="/index.html" style="text-decoration: none">
-           <button class="btn_default">
+            <button class="btn_default">
                 <img src="/src/images/exit.png">Voltar
             </button>
             <button id="mobile_btn"><img
@@ -53,7 +53,7 @@
             </li>
         </ul>
         <a href="/index.html" style="text-decoration: none">
-           <button class="btn_default" id="pizza_item_add">
+            <button class="btn_default" id="pizza_item_add">
                 <img src="/src/images/exit.png">Voltar
             </button>
             <button id="mobile_btn"><img
@@ -70,14 +70,14 @@
     <div class="cart-sidebar">
         <h2>Meu Carrinho</h2>
         <ul class="cart-items">
-            </ul>
+        </ul>
         <div class="cart-total">
             <strong>Total: R$ <span id="cart-total-value">0.00</span></strong>
         </div>
         <button class="btn_default" id="close-cart-sidebar">Fechar Carrinho</button>
         <button class="btn_default" id="checkout-button">Finalizar Compra</button>
     </div>
-    
+
     <button class="btn_default" id="open-cart-sidebar">
         <i class="bi bi-cart-fill"></i> Ver Carrinho
     </button>
@@ -90,30 +90,37 @@
             <div class="modal-body">
                 <p><b>Pizza: <strong id="modal-item-name"></strong></p>
                 <br>
-    
+
                 <div class="form-group">
                     <label>Tamanho:</label>
                     <div id="pizza-sizes">
-                        <button type="button" class="size-button" data-size="broto" data-multiplier="1.00">Broto</button>
-                        <button type="button" class="size-button" data-size="media" data-multiplier="1.03">Média (+3%)</button>
-                        <button type="button" class="size-button active" data-size="grande" data-multiplier="1.05">Grande (+5%)</button>
+                        <button type="button" class="size-button" data-size="broto"
+                            data-multiplier="1.00">Broto</button>
+                        <button type="button" class="size-button" data-size="media" data-multiplier="1.03">Média
+                            (+3%)</button>
+                        <button type="button" class="size-button active" data-size="grande"
+                            data-multiplier="1.05">Grande (+5%)</button>
                     </div>
                     <input type="hidden" id="selected-pizza-size" value="grande">
                     <input type="hidden" id="selected-size-multiplier" value="1.05">
                 </div>
-    
+
                 <div class="form-group">
                     <label>Adicionais:</label>
                     <div id="additional-options">
-                        <label><input type="checkbox" name="additional" value="borda-recheada"> Borda Recheada (+R$ 5,00)</label><br>
-                        <label><input type="checkbox" name="additional" value="queijo-extra"> Queijo Extra (+R$ 3,00)</label><br>
-                        <label><input type="checkbox" name="additional" value="azeitonas-extras"> Azeitonas Extras (+R$ 2,00)</label><br>
+                        <label><input type="checkbox" name="additional" value="borda-recheada"> Borda Recheada (+R$
+                            5,00)</label><br>
+                        <label><input type="checkbox" name="additional" value="queijo-extra"> Queijo Extra (+R$
+                            3,00)</label><br>
+                        <label><input type="checkbox" name="additional" value="azeitonas-extras"> Azeitonas Extras (+R$
+                            2,00)</label><br>
                     </div>
                 </div>
-    
+
                 <div class="form-group">
                     <label for="item-observations">Observações:</label>
-                    <textarea id="item-observations" rows="3" placeholder="Alguma observação para o seu pedido?"></textarea>
+                    <textarea id="item-observations" rows="3"
+                        placeholder="Alguma observação para o seu pedido?"></textarea>
                 </div>
             </div>
             <div class="modal-footer">
@@ -123,36 +130,42 @@
         </div>
     </div>
 
-    <!-- modal de pagamento -->
+
+    <!-- Modal 1: Escolha de pagamento -->
     <div id="paymentModal" class="payment-modal">
         <div class="payment-modal-content">
-            <span class="payment-close-button">&times;</span>
-            <h2>Escolha a forma de pagamento:</h2>
-            <br>
-            <div class="payment-options">
-                <label>
-                    <button type="button" class="pix">
-                        <i class="bi bi-qr-code"></i> Pix
-                    </button>
-                </label>
-                <label>
-                    <button type="button" class="vr">
-                        <i class="bi bi-badge-vr"></i> VR
-                    </button>
-                </label>
-                <label>
-                    <button type="button" class="debito">
-                        <i class="bi bi-credit-card-2-front-fill"></i> Cartão de Débito
-                    </button>
-                </label>
-                <label>
-                    <button type="button" class="credito">
-                        <i class="bi bi-credit-card-fill"></i> Cartão de Crédito
-                    </button>
-                </label>
-            </div>
+          <span class="payment-close-button">&times;</span>
+          <h2>Escolha a forma de pagamento:</h2>
+          <div class="payment-options">
+            <button type="button" class="pix">
+              <i class="bi bi-qr-code"></i> Pix
+            </button>
+            <button type="button" class="vr">
+              <i class="bi bi-badge-vr"></i> VR
+            </button>
+            <button type="button" class="debito">
+              <i class="bi bi-credit-card-2-front-fill"></i> Débito
+            </button>
+            <button type="button" class="credito">
+              <i class="bi bi-credit-card-fill"></i> Crédito
+            </button>
+          </div>
         </div>
-    </div>
+      </div>
+      
+      <!-- Novo Modal para PIX -->
+      <div id="pixModal" class="payment-modal">
+        <div class="payment-modal-content">
+          <span class="pix-close-button">&times;</span>
+          <h2>Pagamento via Pix</h2><br><br>
+          <p>Escaneie o código abaixo e realize o pagamento</p>
+          <img src="/src/images/qr-code.png" class="qr_code" />
+          <p>Tempo restante: </p>
+          <img src="/src/images/loading.gif" class="timer" alt="Aguardando pagamento" />
+        </div>
+      </div>
+
+
 
     <!-- //pizzas //  -->
     <section id="menu">
@@ -496,7 +509,7 @@
 
                     <div class="boxs_price">
                         <h4>R$ 85,00</h4>
-                       <button class="btn_default" id="pizza_item_add">
+                        <button class="btn_default" id="pizza_item_add">
                             <img src="/src/images/add.png" alt=""></button>
                     </div>
 
@@ -534,7 +547,7 @@
 
                     <div class="boxs_price">
                         <h4>R$ 62,50</h4>
-                       <button class="btn_default" id="pizza_item_add">
+                        <button class="btn_default" id="pizza_item_add">
                             <img src="/src/images/add.png" alt=""></button>
                     </div>
 
@@ -572,7 +585,7 @@
 
                     <div class="boxs_price">
                         <h4>R$ 56,89</h4>
-                       <button class="btn_default" id="pizza_item_add">
+                        <button class="btn_default" id="pizza_item_add">
                             <img src="/src/images/add.png" alt=""></button>
                     </div>
 
@@ -610,7 +623,7 @@
 
                     <div class="boxs_price">
                         <h4>R$ 74,99</h4>
-                       <button class="btn_default" id="pizza_item_add">
+                        <button class="btn_default" id="pizza_item_add">
                             <img src="/src/images/add.png" alt=""></button>
                     </div>
 
@@ -650,7 +663,7 @@
 
                     <div class="boxs_price">
                         <h4>R$ 61,80</h4>
-                       <button class="btn_default" id="pizza_item_add">
+                        <button class="btn_default" id="pizza_item_add">
                             <img src="/src/images/add.png" alt=""></button>
                     </div>
 
@@ -688,7 +701,7 @@
 
                     <div class="boxs_price">
                         <h4>R$ 73,20</h4>
-                       <button class="btn_default" id="pizza_item_add">
+                        <button class="btn_default" id="pizza_item_add">
                             <img src="/src/images/add.png" alt=""></button>
                     </div>
 
@@ -726,7 +739,7 @@
 
                     <div class="boxs_price">
                         <h4>R$ 99,90</h4>
-                       <button class="btn_default" id="pizza_item_add">
+                        <button class="btn_default" id="pizza_item_add">
                             <img src="/src/images/add.png" alt=""></button>
                     </div>
 
@@ -764,7 +777,7 @@
 
                     <div class="boxs_price">
                         <h4>R$ 85,00</h4>
-                       <button class="btn_default" id="pizza_item_add">
+                        <button class="btn_default" id="pizza_item_add">
                             <img src="/src/images/add.png" alt=""></button>
                     </div>
 
@@ -774,7 +787,7 @@
         </section>
 
     </section>
-    
+
 
     <footer>
         <img src="src/images/wave.svg" alt="">

@@ -340,3 +340,45 @@ $(document).ready(function () {
         //exibição
         updateCartDisplay();
 });
+
+// pagamento via pix
+document.addEventListener('DOMContentLoaded', function () {
+    const paymentModal = document.getElementById('paymentModal');
+    const pixModal = document.getElementById('pixModal');
+  
+    const closePaymentBtn = document.querySelector('.payment-close-button');
+    const closePixBtn = document.querySelector('.pix-close-button');
+    const pixBtn = document.querySelector('.pix');
+    const finalizarPedidoBtn = document.getElementById('checkout-button');
+
+    // Abre o modal de formas de pagamento ao clicar no botão "Finalizar Pedido"
+  finalizarPedidoBtn.onclick = function () {
+    paymentModal.style.display = 'block';
+  };
+
+  // Abre o modal de PIX
+  pixBtn.onclick = function () {
+    paymentModal.style.display = 'none';
+    pixModal.style.display = 'block';
+  };
+  
+    // Fechar modais
+    closePaymentBtn.onclick = function () {
+      paymentModal.style.display = 'none';
+    };
+  
+    closePixBtn.onclick = function () {
+      pixModal.style.display = 'none';
+    };
+  
+    // Fechar modal ao clicar fora
+    window.onclick = function (event) {
+      if (event.target === paymentModal) {
+        paymentModal.style.display = 'none';
+      } else if (event.target === pixModal) {
+        pixModal.style.display = 'none';
+      }
+    };
+  });
+  
+  
