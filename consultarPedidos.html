@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultar Pedidos - Pizzaria Paradiso</title>
+    <link href="https://unpkg.com/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="src/images/logo.png">
+    <link rel="stylesheet" href="src/styles/style.css">
+    <link rel="stylesheet" href="src/styles/gerenciamento.css">
+</head>
+<body>
+    <header>
+        <nav id="navbar">
+            <i id="nav_logo">
+                <img src="/src/images/logo.png" alt="">Pizza Paradiso
+            </i>
+
+            <ul id="nav_list">
+                <li class="nav_item">
+                    <a href="index.html">Home</a>
+                </li>
+                <li class="nav_item">
+                    <a href="gerenciarClientes.html">Gerenciar Clientes</a>
+                </li>
+                <li class="nav_item active">
+                    <a href="consultarPedidos.html">Consultar Pedidos</a>
+                </li>
+            </ul>
+
+            <button id="mobile_btn">
+                <i class="bx bx-menu"></i>
+            </button>
+        </nav>
+
+        <div id="mobile_menu">
+            <ul id="mobile_nav_list">
+                <li class="nav_item">
+                    <a href="index.html">Home</a>
+                </li>
+                <li class="nav_item">
+                    <a href="gerenciarClientes.html">Gerenciar Clientes</a>
+                </li>
+                <li class="nav_item active">
+                    <a href="consultarPedidos.html">Consultar Pedidos</a>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <section class="search-section">
+            <h2>Buscar Pedidos</h2>
+            <div class="search-form">
+                <input type="text" id="searchInput" placeholder="Número do pedido ou nome do cliente">
+                <button onclick="buscarPedidos()">Buscar</button>
+            </div>
+        </section>
+
+        <section class="order-list">
+            <h2>Pedidos Recentes</h2>
+            <div id="pedidosList"></div>
+        </section>
+    </main>
+
+    <footer>
+        <img src="src/images/wave.svg" alt="">
+        <div id="footer_items">
+            <span id="copyright">
+                &copy 2025 Bruna de Souza Gonçalves
+            </span>
+            <div class="social_media_buttons">
+                <a href="#">
+                    <i class="bx bxl-facebook"></i>
+                </a>
+                <a href="#">
+                    <i class="bx bxl-instagram"></i>
+                </a>
+                <a href="#">
+                    <i class="bx bxl-twitter"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="src/js/consultarPedidos.js"></script>
+</body>
+</html> 
