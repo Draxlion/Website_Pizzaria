@@ -131,10 +131,8 @@ section {
     box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
     padding: 20px;
     transition: right 0.3s ease-in-out;
-    z-index: 1000;
-    /* Garante que o sidebar fique acima de outros elementos */
+    z-index: 1000; /* não alterem <<< */
     overflow-y: auto;
-    /* Permite rolagem se muitos itens forem adicionados */
 }
 
 .cart-sidebar.open {
