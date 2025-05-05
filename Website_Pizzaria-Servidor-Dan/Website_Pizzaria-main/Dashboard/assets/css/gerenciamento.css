@@ -1,0 +1,302 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: rgb(255, 255, 255);
+    margin: 0;
+    padding: 20px;
+  }
+  
+  body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../images/background.png');
+    background-repeat : no-repeat;
+    background-position: center;
+    background-size: cover;
+    opacity: 0.27; 
+    z-index: -1;
+  }
+  
+  .container {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 20px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+  }
+  
+  h1 {
+    color: #FCB03C;
+    margin-bottom: 20px;
+  }
+  
+  /* Botão de voltar */
+  .back-button {
+    display: inline-block;
+    margin-bottom: 20px;
+    padding: 8px 16px;
+    background-color: #068587;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+
+  .back-button:hover {
+    background-color: #6FB07F;
+  }
+  
+  /* Barra de pesquisa */
+  .search-bar {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+  }
+  
+  .search-bar input {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+  }
+  
+  .search-bar button {
+    background-color: #068587;
+    color: #fff;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+  }
+  
+  .search-bar button:hover {
+    background-color: #6FB07F;
+  }
+  
+  /* Formulário de cliente */
+  .client-form {
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .client-form input,
+  .client-form textarea,
+  .client-form select {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+  }
+  
+  .client-form button {
+    align-self: flex-start;
+  }
+  
+  /* Tabela de clientes */
+  .styled-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 1rem;
+  }
+  
+  .styled-table thead tr {
+    background-color: #6FB07F;
+    color: #464646;
+    text-align: left;
+  }
+  
+  .styled-table th,
+  .styled-table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .styled-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .status {
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+  
+  .status.ativo {
+    color: black;
+  }
+  
+  .status.inativo {
+    color: black;
+  }
+  
+  /* Botões de ação */
+
+  .submit{
+    display: inline-block;
+    margin-bottom: 20px;
+    padding: 8px 16px;
+    background-color: #32A639;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    height: 50px;
+  }
+
+  .submit:hover{
+    background-color: #068587;
+  }
+
+  .btn {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    margin-right: 5px;
+    color: white;
+    font-weight: 500;
+  }
+  
+  .btn.view-orders {
+    background-color: #2196F3;
+  }
+  
+  .btn.edit {
+    background-color: #FFC107;
+    color: #333;
+  }
+  
+  .btn.btn-danger {
+    background-color: #f44336;
+  }
+  
+
+/* MODAIS (Ajustes para conteúdo interno) */
+.modal {
+  display: none; 
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  background-color: rgba(0, 0, 0, 0.5); 
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 10% auto;
+  padding: 30px 24px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+.modal-content h2 {
+  color: #FCB03C;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.modal-content input,
+.modal-content select,
+.modal-content textarea {
+  width: 92%;
+  padding: 12px;
+  margin-bottom: 16px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.modal-content input:focus,
+.modal-content textarea:focus,
+.modal-content select:focus {
+  outline: none;
+  border-color: #F2A950;
+}
+
+.modal-content button {
+  background-color: #F2594B;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.modal-content button:hover {
+  background-color: #e63a2a;
+}
+
+.modal-content .close {
+  position: absolute;
+  top: 16px;
+  right: 20px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #999;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.modal-content .close:hover {
+  color: #000;
+}
+
+/* Lista de pedidos no modal */
+#ordersList {
+  padding-left: 20px;
+}
+
+#ordersList li {
+  margin-bottom: 8px;
+  color: #333;
+}
+
+
+@media screen and (max-width: 480px) {
+  .modal-content {
+    margin: 20% auto;
+    padding: 20px 16px;
+  }
+}
+  
+
+  @media screen and (max-width: 768px) {
+    .search-bar {
+      flex-direction: column;
+    }
+  
+    .btn {
+      display: block;
+      margin-bottom: 8px;
+    }
+  
+    .modal-content {
+      margin: 20% auto;
+    }
+  }
+  

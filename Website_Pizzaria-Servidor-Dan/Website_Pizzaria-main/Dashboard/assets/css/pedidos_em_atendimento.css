@@ -1,0 +1,110 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: rgb(255, 255, 255);
+  margin: 0;
+  padding: 20px;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('../images/background.png');
+  background-repeat : no-repeat;
+  background-position: center;
+  background-size: cover;
+  opacity: 0.27; 
+  z-index: -1;
+}
+
+  .container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #ffffff;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.08);
+    border-radius: 12px;
+  }
+  h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #FCB03C;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  th, td {
+    padding: 14px 16px;
+    text-align: center;
+  }
+  th {
+    color: #464646;
+    background-color: #6FB07F;
+  }
+  tr:nth-child(even) {
+    background-color: #f7f9ff;
+  }
+  .status {
+    padding: 6px 12px;
+    border-radius: 16px;
+    font-size: 14px;
+    font-weight: 600;
+    color: white;
+    cursor: pointer;
+  }
+  .aguardando {
+    background-color: #f39c12;
+  }
+  
+  .preparando {
+    background-color: #3498db;
+  }
+  
+  .entregue {
+    background-color: #32A639;
+  }
+  .actions button {
+    padding: 6px 12px;
+    margin: 2px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    color: white;
+  }
+  .actions .toPago {
+    background-color: #3498db;
+  }
+  .actions .toPago:hover {
+    background-color: #1e89d1;
+  }
+  .actions .toEntregue {
+    background-color: #2ecc71;
+  }
+  .actions .toEntregue:hover {
+    background-color: #0fc75b;
+  }
+
+  .back-button {
+    display: inline-block;
+    margin-left: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 8px 16px;
+    background-color: #068587;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+.back-button:hover{
+  background-color: #6FB07F;
+}
